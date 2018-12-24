@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Smoke Suite CafeTest" parallel="none">
+
+  <listeners>
+      <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+      <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+  </listeners>
+  
+  <test name="SmokeTest_CafeTest" group-by-instances="true">
+    <classes>
+    
+        <class name="com.auto.common.LoginTest"/>     
+        <class name="com.auto.common.TC1_AddEmployee"/>
+        <class name="com.auto.common.TC2_EditEmployee"/>
+        <class name="com.auto.common.TC3_DeleteEmployee"/>
+        <class name="com.auto.common.LogoutTest"/>
+       
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
