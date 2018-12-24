@@ -51,7 +51,7 @@ public class ApplicationActions extends CommonActionUtil {
 
 	public ResultDTO createEmployee() throws FrameworkException {
 		boolean isPass = false;
-		String firstName = "cafetest1", lastName = "cafetest1", startDate = "2018-12-24" , empEmail = "configure@configure.com";
+		String firstName = "cafetest123", lastName = "cafetest123", startDate = "2018-12-24" , empEmail = "configure@configure.com";
 		//ResultDTO resultDTOCreateEmployee = new ResultDTO();
 		ResultDTO resultDTOFirstName = new ResultDTO();
 		ResultDTO resultDTOLastName = new ResultDTO();
@@ -119,7 +119,7 @@ public class ApplicationActions extends CommonActionUtil {
 	
 	public ResultDTO editEmployee() throws FrameworkException {
 		boolean isPass = false;
-		String firstName = "cafetest2", lastName = "cafetest2", startDate = "2018-12-25" , empEmail = "configure2@configure.com";
+		String firstName = "cafetest234", lastName = "cafetest234", startDate = "2018-12-25" , empEmail = "configure2@configure.com";
 		ResultDTO resultDTOFirstName = new ResultDTO();
 		ResultDTO resultDTOLastName = new ResultDTO();
 		ResultDTO resultDTOStartDate = new ResultDTO();
@@ -129,7 +129,7 @@ public class ApplicationActions extends CommonActionUtil {
 		waitForElementExistence(FrameworkLocators.CREATE_EMPLOYEE_LIST);
 		System.out.println("Started Edit Employee execution");
 		//select the recently employee name from the list
-		resultDTO = selectEmployeeList("Employee list","cafetest",find(FrameworkLocators.CREATE_EMPLOYEE_LIST, "Create Case Form"));
+		resultDTO = selectEmployeeList("Employee list","cafetest123",find(FrameworkLocators.CREATE_EMPLOYEE_LIST, "Create Case Form"));
 		if (resultDTO.getResultStatus()) {
 			logReport.reportTestResults(resultDTO.getResultStatus(), resultDTO.getResultMessage(), FrameworkConstants.ONFAIL_PROCEED);
 			waitForElementExistence(FrameworkLocators.EDIT_EMPLOYEE);
@@ -192,12 +192,16 @@ public class ApplicationActions extends CommonActionUtil {
 		waitForElementExistence(FrameworkLocators.CREATE_EMPLOYEE_LIST);
 		System.out.println("Started Delete Employee execution");
 		//select the recently employee name from the list
-		resultDTO = selectEmployeeList("Employee list","cafetest",find(FrameworkLocators.CREATE_EMPLOYEE_LIST, "Create Case Form"));
+		resultDTO = selectEmployeeList("Employee list","cafetest234",find(FrameworkLocators.CREATE_EMPLOYEE_LIST, "Create Case Form"));
 		if (resultDTO.getResultStatus()) {
 			logReport.reportTestResults(resultDTO.getResultStatus(), resultDTO.getResultMessage(), FrameworkConstants.ONFAIL_PROCEED);
 			waitForElementExistence(FrameworkLocators.DELETE_EMPLOYEE);
 			resultDTO = clickElement("Delete Employee Button",
 					find(FrameworkLocators.DELETE_EMPLOYEE, "Delete Employee Button"));
+			if (resultDTO.getResultStatus()) {
+				logReport.reportTestResults(resultDTO.getResultStatus(), resultDTO.getResultMessage(), FrameworkConstants.ONFAIL_PROCEED);
+				resultDTO = switchToAlert("ACCEPT","exists");
+			}
 		}
 		return resultDTO;
 	}
