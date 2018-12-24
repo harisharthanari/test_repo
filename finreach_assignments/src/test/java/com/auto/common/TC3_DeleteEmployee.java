@@ -23,10 +23,10 @@ public class TC3_DeleteEmployee extends WebDriverInit {
 	}
 	
 	@Test(priority = 0,description="test3DeleteEmployee",dependsOnGroups={"loginApplication"})
-	public void testCreateEmployee() {
+	public void testDeleteEmployee() {
 		try {
 			
-			empObj.editAndValidateEmployee();
+			empObj.DeleteEmployee();
 			
 			
 		} catch (FrameworkException tfe) {
