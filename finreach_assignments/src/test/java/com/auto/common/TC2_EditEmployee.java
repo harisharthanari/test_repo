@@ -24,7 +24,7 @@ public class TC2_EditEmployee extends WebDriverInit {
 	}
 	
 	@Test(priority = 0,description="test2UpdateEmployee",dependsOnGroups={"loginApplication"})
-	public void testCreateEmployee() {
+	public void testUpdateEmployee() {
 		try {
 			
 			empObj.editAndValidateEmployee();
