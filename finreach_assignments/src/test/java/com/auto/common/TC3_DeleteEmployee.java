@@ -22,7 +22,7 @@ public class TC3_DeleteEmployee extends WebDriverInit {
 			
 	}
 	
-	@Test(priority = 0,description="test1CreateEmployee",dependsOnGroups={"loginApplication"})
+	@Test(priority = 0,description="test3DeleteEmployee",dependsOnGroups={"loginApplication"})
 	public void testCreateEmployee() {
 		try {
 			
